@@ -8,8 +8,12 @@ const server = express()
 // to parse JSON request bodies. We'll go more into detail about this later.
 server.use(express.json())
 
+// create a route, pass a callback
 server.get("/users", (req, res) => {
-	const users = db.getUsers()
+  // call the getUsers function in db to query the database data/tables
+  const users = db.getUsers()
+  // // responses are sent back as a json object
+  // res.json({ message: "Hello, world!"})
 	res.json(users)
 })
 
